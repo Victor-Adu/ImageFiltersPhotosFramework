@@ -105,7 +105,14 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         })
         
         //Add VidCam
-        
+        let optionForVideo = UIAlertAction(title: "Record Video", style: UIAlertActionStyle.Default, handler: {(action: UIAlertAction!) -> Void in
+            
+            let videoVC = self.storyboard.instantiateViewControllerWithIdentifier("RecordVideoVC") as RecordVideoViewController
+            
+            self.presentViewController(videoVC, animated: true, completion: { () -> Void in
+              println("Showing Record Video View Controller")
+            })
+        })
         
         let optionToCancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: {(action: UIAlertAction!) -> Void in
             
@@ -115,6 +122,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         
         self.actionController.addAction(optionForCamera)
         self.actionController.addAction(optionForPhotoLib)
+        self.actionController.addAction(optionForVideo)
         self.actionController.addAction(optionToCancel)
     }
     

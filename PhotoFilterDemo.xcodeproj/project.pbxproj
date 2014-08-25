@@ -21,6 +21,7 @@
 		5B885DE119988B2200753F1E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B885DE019988B2200753F1E /* Images.xcassets */; };
 		5B885DED19988B2200753F1E /* PhotoFilterDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B885DEC19988B2200753F1E /* PhotoFilterDemoTests.swift */; };
 		5BB8EC8C19AAA443008C7990 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB8EC8B19AAA443008C7990 /* Filter.swift */; };
+		5BB8EC8E19AAC435008C7990 /* RecordVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB8EC8D19AAC435008C7990 /* RecordVideoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		5B885DEB19988B2200753F1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B885DEC19988B2200753F1E /* PhotoFilterDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFilterDemoTests.swift; sourceTree = "<group>"; };
 		5BB8EC8B19AAA443008C7990 /* Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		5BB8EC8D19AAC435008C7990 /* RecordVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordVideoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 				5B885DDB19988B2200753F1E /* ViewController.swift */,
 				5B150145199893BC0052A76B /* GridViewController.swift */,
 				5B15014B199899F00052A76B /* PhotoViewController.swift */,
+				5BB8EC8D19AAC435008C7990 /* RecordVideoViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				5B1501491998953A0052A76B /* CellForPhoto.swift in Sources */,
 				5B150146199893BC0052A76B /* GridViewController.swift in Sources */,
 				5B15014C199899F00052A76B /* PhotoViewController.swift in Sources */,
+				5BB8EC8E19AAC435008C7990 /* RecordVideoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

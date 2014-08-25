@@ -307,5 +307,64 @@
             </objects>
             <point key="canvasLocation" x="218" y="136"/>
         </scene>
+        <!--Record Video View Controller-->
+        <scene sceneID="qb2-Xh-iku">
+            <objects>
+                <viewController storyboardIdentifier="RecordVideoVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JAc-DK-qZK" customClass="RecordVideoViewController" customModule="PhotoFilterDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LEp-I4-YgY"/>
+                        <viewControllerLayoutGuide type="bottom" id="CM2-8s-cn8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ug6-HB-YFq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QJs-sQ-Hzd">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                                <color key="backgroundColor" red="0.1156422292" green="0.96912866710000001" blue="0.78989329829999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sPz-YV-lUt">
+                                <rect key="frame" x="468" y="428" width="116" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="116" id="2by-Dz-ccd"/>
+                                    <constraint firstAttribute="height" constant="128" id="yw9-EI-L5B"/>
+                                </constraints>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1at-R5-LQn">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="WAe-LY-5yI"/>
+                                    <barButtonItem title="Start Recording" id="ySa-k6-ssv">
+                                        <connections>
+                                            <action selector="recordVideo:" destination="JAc-DK-qZK" id="HI2-c3-Jot"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="l6h-PI-Is6"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="1at-R5-LQn" secondAttribute="trailing" id="Bmp-oN-gJO"/>
+                            <constraint firstItem="CM2-8s-cn8" firstAttribute="top" secondItem="1at-R5-LQn" secondAttribute="bottom" id="FK0-kQ-ukw"/>
+                            <constraint firstItem="1at-R5-LQn" firstAttribute="top" secondItem="QJs-sQ-Hzd" secondAttribute="bottom" id="HoT-fO-kXm"/>
+                            <constraint firstItem="QJs-sQ-Hzd" firstAttribute="top" secondItem="Ug6-HB-YFq" secondAttribute="top" id="UZi-HO-tIk"/>
+                            <constraint firstItem="QJs-sQ-Hzd" firstAttribute="leading" secondItem="Ug6-HB-YFq" secondAttribute="leading" id="cux-a8-kEf"/>
+                            <constraint firstAttribute="trailing" secondItem="QJs-sQ-Hzd" secondAttribute="trailing" id="fG0-gR-XiU"/>
+                            <constraint firstItem="1at-R5-LQn" firstAttribute="leading" secondItem="Ug6-HB-YFq" secondAttribute="leading" id="n6N-nl-v0f"/>
+                            <constraint firstItem="CM2-8s-cn8" firstAttribute="top" secondItem="sPz-YV-lUt" secondAttribute="bottom" constant="44" id="p2d-p0-5j3"/>
+                            <constraint firstAttribute="trailing" secondItem="sPz-YV-lUt" secondAttribute="trailing" constant="16" id="rLh-BH-7JR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="sPz-YV-lUt" id="HBE-Ej-wGr"/>
+                        <outlet property="previewView" destination="QJs-sQ-Hzd" id="ifo-6X-uBp"/>
+                        <outlet property="recordButton" destination="ySa-k6-ssv" id="35q-II-kIb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hnJ-a6-I8c" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="562" y="845"/>
+        </scene>
     </scenes>
 </document>
