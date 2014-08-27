@@ -9,7 +9,7 @@
 import UIKit
 import Photos
 
-class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate, PHPhotoLibraryChangeObserver, PhotoSelectedDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
+class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate, PHPhotoLibraryChangeObserver, PhotoSelectedDelegate, UICollectionViewDelegate {
     
     var filters = ["CISepiaTone", "CIPhotoEffectMono", "CIVignette","CIColorMonochrome", "CIPhotoEffectProcess"]
                             
@@ -28,7 +28,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     var selectedAsset : PHAsset?
     
-    //var myfilters = [Filter]()
+    var myfilters = [Filter]()
     
     let adjustmentFormatterIndentifier = "com.ImageFilterDemo1.victoradu"
     
@@ -134,10 +134,18 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         self.photoPicker.allowsEditing = true
         self.photoPicker.delegate = self
         
+        self.setupFiltersArray()
         self.setupAlertController()
         self.setupAlertView()
         
         PHPhotoLibrary.sharedPhotoLibrary().registerChangeObserver(self)
+    }
+    
+    func setupFiltersArray() {
+        for filterString in self.filters {
+            let filter = Filter(name: filterString)
+            self.myfilters.append(filter)
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -292,21 +300,21 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     func collectionView(collectionView: UICollectionView!, cellForItemAtIndexPath indexPath: NSIndexPath!) -> UICollectionViewCell! {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cellFilter", forIndexPath: indexPath) as FilterCell
         
-       // let filter = filters[indexPath.item]     //?????How do I caste this as my 'Filter' class so that I can use its properties...???
+        let filter = myfilters[indexPath.item]
         
         if self.filterThumbnail != nil {
             cell.filterImageView.image = self.filterThumbnail
-//            if filter.thumbnailImage != nil {
-//                cell.filterImageView.image = filter.thumbnailImage
-//            }else {
-//                filter.createFilterThumbnailFromImage(self.filterThumbnail!, completionHandler: { (image) -> Void in
-//                    cell.filterImageView.image = image
-//                })
-//            }
-//            
-//        }
-//        cell.filterLabel.text = filter.name
+            if filter.thumbnailImage != nil {
+                cell.filterImageView.image = filter.thumbnailImage
+            }else {
+                filter.createFilterThumbnailFromImage(self.filterThumbnail!, completionHandler: { (image) -> Void in
+                    cell.filterImageView.image = image
+                })
+            }
+            
         }
+        cell.filterLabel.text = filter.name
+
         return cell
     }
     
